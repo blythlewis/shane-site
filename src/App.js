@@ -1,28 +1,14 @@
-import logo from './Shane_Front_Page.jpg';
-import './App.css';
+import logo from "./Shane_Front_Page.jpg";
+import "./App.css";
 
 export function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-  
-      
-      </header>
-    </div>
-    
-  );
+  return <div className="App"></div>;
 }
 
-function lewis(name){
-
-  return (
-
-  <p>{name}</p>
-  )
+function lewis(name) {
+  return <p>{name}</p>;
 }
 
- export function add(firstNumber, secondNumber){
-
-      return 
+export function add(firstNumber, secondNumber) {
+  return;
 }
-
