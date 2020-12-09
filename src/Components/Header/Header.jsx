@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { NAV_COLOR, FONT_FAMILY } from "../../constants";
+import { useHistory } from "react-router-dom";
 
 const NameTag = styled.div`
   width: 300px;
@@ -13,22 +14,52 @@ const Name = styled.p`
   color: white;
   font-size: 40px;
   margin: 10px;
+  position: fixed;
 `;
-const NavElements = styled.nav``;
+const NavElements = styled.nav`
+  margin-left: 8px;
+`;
 const NavElement = styled.div`
   width: 30px;
   height: 55px;
   background-color: #fff;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   margin-bottom: 10px;
+  transition: width 0.4s;
+  cursor: pointer;
 
+  -webkit-transition: width 0.4s;
   :hover {
     width: ${(props) => props.width};
   }
 `;
 
-const Link = styled.a`
-  margin-right: 10px;
+const NavLinkContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  :hover {
+    opacity: 1;
+  }
+`;
+
+const NavLink = styled.a`
+  text-decoration: none;
+  font-size: 30px;
+  font-family: Nunito-Regular;
+  color: black;
+  padding-left: 10px;
+  :visited {
+    color: black;
+  } /* Visited link    */
+  :hover {
+    color: black;
+  } /* Mouse over link */
+  :active {
+    color: black;
+  }
 `;
 
 //array [0,1,2,3]
@@ -37,8 +68,8 @@ const Link = styled.a`
 
 const navElements = [
   { url: "/about", name: "About", width: "150px" },
-  { url: "/partners", name: "partners", width: "175px" },
-  { url: "/goals", name: "goals", width: "200px" },
+  { url: "/partners", name: "Partners", width: "175px" },
+  { url: "/goals", name: "Goals", width: "200px" },
 ];
 
 export const Header = () => {
@@ -51,10 +82,22 @@ export const Header = () => {
       >
         <Name>SHANE SMITH</Name>
       </NameTag>
-      {navElements.map((el) => {
-        console.log(el);
-        return <NavElement width={el.width}></NavElement>;
-      })}
+      <NavElements>
+        {navElements.map((el) => {
+          return (
+            <NavElement
+              onClick={() => {
+                window.location.href = el.url;
+              }}
+              width={el.width}
+            >
+              <NavLinkContainer>
+                <NavLink href={el.url}>{el.name}</NavLink>
+              </NavLinkContainer>
+            </NavElement>
+          );
+        })}
+      </NavElements>
     </>
   );
 };
