@@ -3,12 +3,11 @@ import styled from "styled-components";
 import { NAV_COLOR, FONT_FAMILY } from "../../constants";
 
 const NameTag = styled.div`
-  background: #000;
   width: 300px;
   height: 80px;
-  text-align: center;
-  font-family: ${FONT_FAMILY};
+  text-align: left;
   cursor: pointer;
+  font-family: Nunito;
 `;
 const Name = styled.p`
   color: white;
@@ -17,9 +16,10 @@ const Name = styled.p`
 `;
 const NavElements = styled.nav``;
 const NavElement = styled.div`
-  width: 200px;
-  height: 70px;
-  background-color: grey;
+  width: 30px;
+  height: 55px;
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.5);
   margin-bottom: 10px;
 
   :hover {
@@ -36,8 +36,9 @@ const Link = styled.a`
 // navElements get the array and map
 
 const navElements = [
-  { url: "/about", name: "About", width: "230px" },
-  { url: "/sponsors", name: "Sponsors", width: "250px" },
+  { url: "/about", name: "About", width: "150px" },
+  { url: "/partners", name: "partners", width: "175px" },
+  { url: "/goals", name: "goals", width: "200px" },
 ];
 
 export const Header = () => {
@@ -48,7 +49,7 @@ export const Header = () => {
           window.location.href = "/home";
         }}
       >
-        <Name>Shane Smith</Name>
+        <Name>SHANE SMITH</Name>
       </NameTag>
       {navElements.map((el) => {
         console.log(el);
