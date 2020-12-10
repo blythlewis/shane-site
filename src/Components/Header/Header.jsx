@@ -1,65 +1,66 @@
 import React from "react";
 import styled from "styled-components";
-import { NAV_COLOR, FONT_FAMILY } from "../../constants";
-import { useHistory } from "react-router-dom";
 
-const NameTag = styled.div`
-  width: 300px;
-  height: 80px;
-  text-align: left;
-  cursor: pointer;
-  font-family: Nunito;
+const HeaderContainer = styled.header``;
+
+const ContainerGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 30px;
+  grid-template-rows: auto;
+  justify-content: center;
+  grid-auto-flow: column;
+  border-bottom: 5px solid #426a5a;
+  position: relative;
+  z-index: 1;
 `;
-const Name = styled.p`
+
+const HeaderLogo = styled.div`
+  grid-column: 1/2;
+  z-index: 1;
   color: white;
-  font-size: 40px;
-  margin: 10px;
-  position: fixed;
+  border-right: 5px solid #426a5a;
+  font-size: 46px;
+  padding-right: 8px;
 `;
-const NavElements = styled.nav`
-  margin-left: 8px;
-`;
-const NavElement = styled.div`
-  width: 30px;
-  height: 55px;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 10px;
-  transition: width 0.4s;
-  cursor: pointer;
 
-  -webkit-transition: width 0.4s;
-  :hover {
-    width: ${(props) => props.width};
-  }
+const Nav = styled.nav`
+  grid-column: 7/13;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 30px;
+  grid-template-rows: auto;
+  justify-content: center;
+  grid-auto-flow: column;
+  font-size: 30px;
+  padding-top: 10px;
 `;
 
 const NavLinkContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.3s;
-  -webkit-transition: opacity 0.3s;
-  :hover {
-    opacity: 1;
-  }
+  grid-row-start: 1;
+  grid-column: ${(props) => props.column};
+  color: white;
+
+  text-align: center;
 `;
 
 const NavLink = styled.a`
   text-decoration: none;
-  font-size: 30px;
-  font-family: Nunito-Regular;
-  color: black;
+  font-family: Nunito;
   padding-left: 10px;
-  :visited {
-    color: black;
-  } /* Visited link    */
-  :hover {
-    color: black;
-  } /* Mouse over link */
-  :active {
-    color: black;
-  }
+  cursor: pointer;
+`;
+
+const Circle = styled.div`
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #426a5a;
+  grid-row-start: 1;
+  grid-column: ${(props) => props.column};
+  margin: 0 auto;
+  display: inline-block;
+  margin-top: 12px;
 `;
 
 //array [0,1,2,3]
@@ -67,37 +68,34 @@ const NavLink = styled.a`
 // navElements get the array and map
 
 const navElements = [
-  { url: "/about", name: "About", width: "150px" },
-  { url: "/partners", name: "Partners", width: "175px" },
-  { url: "/goals", name: "Goals", width: "200px" },
+  { url: "/about", name: "About", column: "2/2" },
+  { url: "/partners", name: "Partners", column: "3/3" },
+  { url: "/goals", name: "Goals", column: "4/4" },
 ];
 
 export const Header = () => {
   return (
     <>
-      <NameTag
-        onClick={() => {
-          window.location.href = "/home";
-        }}
-      >
-        <Name>SHANE SMITH</Name>
-      </NameTag>
-      <NavElements>
-        {navElements.map((el) => {
-          return (
-            <NavElement
-              onClick={() => {
-                window.location.href = el.url;
-              }}
-              width={el.width}
-            >
-              <NavLinkContainer>
-                <NavLink href={el.url}>{el.name}</NavLink>
-              </NavLinkContainer>
-            </NavElement>
-          );
-        })}
-      </NavElements>
+      <HeaderContainer>
+        <ContainerGrid>
+          <HeaderLogo>
+            <NavLink id="logo" href={"/home"}>
+              SS.
+            </NavLink>
+          </HeaderLogo>
+          <Nav>
+            <Circle column={"1/1"}></Circle>
+            {navElements.map((el, i) => {
+              return (
+                <NavLinkContainer key={i} column={el.column}>
+                  <NavLink href={el.url}>{el.name}</NavLink>
+                </NavLinkContainer>
+              );
+            })}
+            <Circle column={"5/5"}></Circle>
+          </Nav>
+        </ContainerGrid>
+      </HeaderContainer>
     </>
   );
 };

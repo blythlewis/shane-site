@@ -1,12 +1,13 @@
 @font-face {
   font-family: 'Nunito';
-  src: local('Nunito'), url(./fonts/Nunito-Bold.ttf) format('truetype');
+  src: local('Nunito'), url(./fonts/Nunito-Light.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Nunito-Regular';
   src: local('Nunito-Regular'), url(./fonts/Nunito-Regular.ttf) format('truetype');
 }
+
 
 body {
   margin: 0;
@@ -18,4 +19,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+h1,h2,h3{
+
+  font-family:Nunito-Regular;
 }
