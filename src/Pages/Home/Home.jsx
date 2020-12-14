@@ -18,37 +18,37 @@ export const Home = () => {
               <tr>
                 <th>Tournaments</th>
                 <th>Dates</th>
-                <th>Past Finish</th>
+                <th>Results</th>
               </tr>
               <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
+                <td>Lecom Suncoast Classic</td>
+                <td>2/15 - 2/21</td>
+                <td>N/A</td>
               </tr>
               <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
+                <td>Chitimacha Louisiana Open</td>
+                <td>3/15 - 3/21</td>
+                <td>N/A</td>
               </tr>
               <tr>
-                <td>Ernst Handel</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
+                <td>Emerald Coast Classic</td>
+                <td>3/29 - 4/4</td>
+                <td>N/A</td>
               </tr>
               <tr>
-                <td>Island Trading</td>
-                <td>Helen Bennett</td>
-                <td>UK</td>
+                <td>Huntsville Championship</td>
+                <td>4/26 - 5/2</td>
+                <td>N/A</td>
               </tr>
               <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>Yoshi Tannamuri</td>
-                <td>Canada</td>
+                <td>Witchita Open</td>
+                <td>6/14 - 6/20</td>
+                <td>N/A</td>
               </tr>
               <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>Giovanni Rovelli</td>
-                <td>Italy</td>
+                <td>Lincoln Land Championship</td>
+                <td>7/12 - 7/18</td>
+                <td>N/A</td>
               </tr>
             </table>
           </div>
