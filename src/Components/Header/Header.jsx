@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import shane_logo from "../../shane_logo.jpg";
 
 const HeaderContainer = styled.header``;
 
@@ -33,7 +34,7 @@ const Nav = styled.nav`
   justify-content: center;
   grid-auto-flow: column;
   font-size: 30px;
-  padding-top: 10px;
+  padding-top: 22px;
 `;
 
 const NavLinkContainer = styled.div`
@@ -46,9 +47,9 @@ const NavLinkContainer = styled.div`
 
 const NavLink = styled.a`
   text-decoration: none;
-  font-family: Nunito;
   padding-left: 10px;
   cursor: pointer;
+  font-family: Nunito-SemiBoldItalic;
 `;
 
 const Circle = styled.div`
@@ -68,9 +69,10 @@ const Circle = styled.div`
 // navElements get the array and map
 
 const navElements = [
-  { url: "/about", name: "About", column: "2/2" },
-  { url: "/partners", name: "Partners", column: "3/3" },
-  { url: "/goals", name: "Goals", column: "4/4" },
+  { url: "#about", name: "About", column: "1/1" },
+  { url: "/media", name: "Schedule", column: "2/2" },
+  { url: "/schedule", name: "Media", column: "3/3" },
+  { url: "/schedule", name: "Contact", column: "4/4" },
 ];
 
 export const Header = () => {
@@ -80,11 +82,10 @@ export const Header = () => {
         <ContainerGrid>
           <HeaderLogo>
             <NavLink id="logo" href={"/home"}>
-              SS.
+              <img className="shane_logo" src={shane_logo}></img>
             </NavLink>
           </HeaderLogo>
           <Nav>
-            <Circle column={"1/1"}></Circle>
             {navElements.map((el, i) => {
               return (
                 <NavLinkContainer key={i} column={el.column}>
@@ -92,7 +93,6 @@ export const Header = () => {
                 </NavLinkContainer>
               );
             })}
-            <Circle column={"5/5"}></Circle>
           </Nav>
         </ContainerGrid>
       </HeaderContainer>

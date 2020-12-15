@@ -8,6 +8,15 @@
   src: local('Nunito-Regular'), url(./fonts/Nunito-Regular.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Nunito-Bold';
+  src: local('Nunito-Bold'), url(./fonts/Nunito-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito-SemiBoldItalic';
+  src: local('Nunito-SemiBoldItalic'), url(./fonts/Nunito-SemiBoldItalic.ttf) format('truetype');
+}
 
 body {
   margin: 0;
@@ -24,5 +33,5 @@ code {
 
 h1,h2,h3{
 
-  font-family:Nunito-Regular;
+  font-family:Nunito-Bold;
 }
