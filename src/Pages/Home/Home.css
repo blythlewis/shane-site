@@ -1,5 +1,4 @@
 .container{
-
     margin-left:20px;
     margin-top:20px;
     margin-bottom:30px;
@@ -115,7 +114,20 @@ td, th {
     margin-left: 9px;
 }
 
+.block-quotes-wrapper{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 30px;
+  grid-template-rows: auto;
+  justify-content: center;
+  grid-auto-flow: column;
+  position: relative;
+  z-index: 1;
+}
+
 .box {
+     grid-row-start: 1;
+     grid-column: 1/8;
 	 background-color: transparent;
 	 border-radius: 3px;
 	 color: #fff;
