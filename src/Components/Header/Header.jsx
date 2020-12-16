@@ -101,3 +101,4 @@ export const Header = () => {
 };
 
 export default Header;
+// I am greatful for the position I am in, it's not often you get to try and fulfill a boy hood dream. I remind myself daily that playing the game I love is an oppertunity that not everyone gets. The chance to play on the best tour in the world is what drives me.  

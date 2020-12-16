@@ -37,7 +37,7 @@
 }
 #about-img{
     border-radius: 24%;
-    margin-top: 43px;
+    margin-top: 20px;
 }
 .about-table{
   grid-row:1;
@@ -71,39 +71,56 @@ td, th {
   grid-auto-flow: column;
   position: relative;
   z-index: 1;
-  font-family:Nunito-Bold;
+  font-family: Nunito-SemiBoldItalic;
   font-size:30px;
+  text-align: left;
+  
 }
 .name-placeholder{
     grid-row-start: 1;
-    grid-column: 1/2;
+	grid-column: 1/6;
+	margin-bottom: 10px;
+	margin-top: 40px;
 }
 
 .name{
     grid-row-start: 1;
-    grid-column: 2/6;
+	grid-column: 6/10;
+	margin-top: 40px;
 }
 .age-placeholder{
     grid-row-start: 2;
-    grid-column: 1/2;
+	grid-column: 1/6;
+	margin-bottom: 10px;
 
 }
 
 .age{
     grid-row-start: 2;
-    grid-column: 2/6;
+    grid-column: 6/10;
 }
 .location-placeholder{
     grid-row-start: 3;
-    grid-column: 1/2;
+	grid-column: 1/6;
+	margin-bottom: 10px;
 
 }
 
 .location{
     grid-row-start: 3;
-    grid-column: 2/6;
+    grid-column: 6/10;
 }
 
+.scoring-placeholder{
+	grid-row-start: 4;
+	grid-column: 1/6;
+	margin-bottom: 10px;
+}
+
+.scoring{
+	grid-row-start: 4;
+    grid-column: 6/10;
+}
 
 .carousel .control-dots .dot {
     background: black !important;

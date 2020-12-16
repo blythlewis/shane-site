@@ -18,12 +18,14 @@ export const Home = () => {
           <div className="about-table">
             <Carousel>
               <div className="personal">
-                <div className="name-placeholder">Name</div>
-                <div className="name">Shane Smith</div>
-                <div className="age-placeholder">Name</div>
-                <div className="age">Shane Smith</div>
-                <div className="location-placeholder">Name</div>
-                <div className="location">Shane Smith</div>
+                <div className="name-placeholder">Shane Smith</div>
+                <div className="name">Scottsdale, AZ</div>
+                <div className="age-placeholder">Age</div>
+                <div className="age">30</div>
+                <div className="location-placeholder">Turned Pro</div>
+                <div className="location">2013</div>
+                <div className="scoring-placeholder">Scoring Average</div>
+                <div className="scoring">72.27</div>
               </div>
               <div className="tournaments">
                 <table>
