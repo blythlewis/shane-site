@@ -69,10 +69,20 @@ const Circle = styled.div`
 // navElements get the array and map
 
 const navElements = [
-  { url: "#about", name: "About", column: "1/1" },
-  { url: "/media", name: "Schedule", column: "2/2" },
-  { url: "/schedule", name: "Media", column: "3/3" },
-  { url: "/schedule", name: "Contact", column: "4/4" },
+  {
+    url: "https://www.pgatour.com/players/player.47533.shane-smith.html",
+    name: "Profile",
+    column: "1/1",
+    target: "_blank",
+  },
+  { url: "#about", name: "Schedule", column: "2/2", target: "" },
+  { url: "#about", name: "Media", column: "3/3", target: "" },
+  {
+    url: "mailto:contactme@shanesmithgolf.com",
+    name: "Contact",
+    column: "4/4",
+    target: "",
+  },
 ];
 
 export const Header = () => {
@@ -81,7 +91,7 @@ export const Header = () => {
       <HeaderContainer>
         <ContainerGrid>
           <HeaderLogo>
-            <NavLink id="logo" href={"/home"}>
+            <NavLink id="logo" href={"#"}>
               <img className="shane_logo" src={shane_logo}></img>
             </NavLink>
           </HeaderLogo>
@@ -89,7 +99,9 @@ export const Header = () => {
             {navElements.map((el, i) => {
               return (
                 <NavLinkContainer key={i} column={el.column}>
-                  <NavLink href={el.url}>{el.name}</NavLink>
+                  <NavLink target={el.target} href={el.url}>
+                    {el.name}
+                  </NavLink>
                 </NavLinkContainer>
               );
             })}
@@ -101,4 +113,4 @@ export const Header = () => {
 };
 
 export default Header;
-// I am greatful for the position I am in, it's not often you get to try and fulfill a boy hood dream. I remind myself daily that playing the game I love is an oppertunity that not everyone gets. The chance to play on the best tour in the world is what drives me.  
+// I am greatful for the position I am in, it's not often you get to try and fulfill a boy hood dream. I remind myself daily that playing the game I love is an oppertunity that not everyone gets. The chance to play on the best tour in the world is what drives me.
