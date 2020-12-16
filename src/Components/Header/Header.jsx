@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import shane_logo from "../../shane_logo.jpg";
 
 const HeaderContainer = styled.header``;
 
@@ -33,7 +34,7 @@ const Nav = styled.nav`
   justify-content: center;
   grid-auto-flow: column;
   font-size: 30px;
-  padding-top: 10px;
+  padding-top: 22px;
 `;
 
 const NavLinkContainer = styled.div`
@@ -46,9 +47,9 @@ const NavLinkContainer = styled.div`
 
 const NavLink = styled.a`
   text-decoration: none;
-  font-family: Nunito;
   padding-left: 10px;
   cursor: pointer;
+  font-family: Nunito-SemiBoldItalic;
 `;
 
 const Circle = styled.div`
@@ -68,9 +69,20 @@ const Circle = styled.div`
 // navElements get the array and map
 
 const navElements = [
-  { url: "/about", name: "About", column: "2/2" },
-  { url: "/partners", name: "Partners", column: "3/3" },
-  { url: "/goals", name: "Goals", column: "4/4" },
+  {
+    url: "https://www.pgatour.com/players/player.47533.shane-smith.html",
+    name: "Profile",
+    column: "1/1",
+    target: "_blank",
+  },
+  { url: "#about", name: "Schedule", column: "2/2", target: "" },
+  { url: "#about", name: "Media", column: "3/3", target: "" },
+  {
+    url: "mailto:contactme@shanesmithgolf.com",
+    name: "Contact",
+    column: "4/4",
+    target: "",
+  },
 ];
 
 export const Header = () => {
@@ -79,20 +91,20 @@ export const Header = () => {
       <HeaderContainer>
         <ContainerGrid>
           <HeaderLogo>
-            <NavLink id="logo" href={"/home"}>
-              SS.
+            <NavLink id="logo" href={"#"}>
+              <img className="shane_logo" src={shane_logo}></img>
             </NavLink>
           </HeaderLogo>
           <Nav>
-            <Circle column={"1/1"}></Circle>
             {navElements.map((el, i) => {
               return (
                 <NavLinkContainer key={i} column={el.column}>
-                  <NavLink href={el.url}>{el.name}</NavLink>
+                  <NavLink target={el.target} href={el.url}>
+                    {el.name}
+                  </NavLink>
                 </NavLinkContainer>
               );
             })}
-            <Circle column={"5/5"}></Circle>
           </Nav>
         </ContainerGrid>
       </HeaderContainer>
@@ -101,3 +113,4 @@ export const Header = () => {
 };
 
 export default Header;
+// I am greatful for the position I am in, it's not often you get to try and fulfill a boy hood dream. I remind myself daily that playing the game I love is an oppertunity that not everyone gets. The chance to play on the best tour in the world is what drives me.
