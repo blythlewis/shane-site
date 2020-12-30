@@ -35,6 +35,10 @@ const Nav = styled.nav`
   grid-auto-flow: column;
   font-size: 30px;
   padding-top: 22px;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
 `;
 
 const NavLinkContainer = styled.div`
